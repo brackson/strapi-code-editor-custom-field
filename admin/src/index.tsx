@@ -27,6 +27,23 @@ export default {
       },
     })
     app.customFields.register({
+      name: 'code-editor-css',
+      pluginId,
+      type: 'text',
+      intlLabel: {
+        id: 'code-editor-text.label',
+        defaultMessage: 'Code editor CSS',
+      },
+      intlDescription: {
+        id: 'code-editor-text.description',
+        defaultMessage: 'Field for CSS editing',
+      },
+      icon: Code,
+      components: {
+        Input: async () => import(/* webpackChunkName: "input-component" */ './components/CodeEditor/CodeEditor'),
+      },
+    })
+    app.customFields.register({
       name: 'code-editor-text',
       pluginId,
       type: 'text',
