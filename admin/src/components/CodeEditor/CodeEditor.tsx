@@ -85,7 +85,8 @@ const CodeEditor = ({
   const { formatMessage } = useIntl()
   const languageRegExp = new RegExp('__(.+)__;')
   const isJson = attribute.customField.endsWith('code-editor-json')
-  const defaultLanguage = isJson ? 'json' : 'javascript'
+  const isCss = attribute.customField.endsWith('code-editor-css')
+  const defaultLanguage = isJson ? 'json' : (isCss ? 'css' : 'javascript')
   let languageFromValue: null | Array<string> | string = value ? value.match(languageRegExp) : null
   if (languageFromValue && languageFromValue.length > 1) {
     languageFromValue = languageFromValue[1] as string
