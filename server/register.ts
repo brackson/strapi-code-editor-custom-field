@@ -9,6 +9,11 @@ export default ({ strapi }: { strapi: Strapi }) => {
     type: 'json',
   })
   strapi.customFields.register({
+    name: 'code-editor-css',
+    plugin: pluginId,
+    type: 'css',
+  })
+  strapi.customFields.register({
     name: 'code-editor-text',
     plugin: pluginId,
     type: 'text',
